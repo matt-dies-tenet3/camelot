@@ -5,8 +5,7 @@ from typing import Union
 from pypdf._utils import StrByteType
 
 from .handlers import PDFHandler
-from .utils import remove_extra
-from .utils import validate_input
+from .utils import remove_extra, validate_input
 
 
 def read_pdf(

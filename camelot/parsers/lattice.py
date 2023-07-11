@@ -10,20 +10,23 @@ import pandas as pd
 
 from ..backends.image_conversion import BACKENDS
 from ..core import Table
-from ..image_processing import adaptive_threshold
-from ..image_processing import find_contours
-from ..image_processing import find_joints
-from ..image_processing import find_lines
-from ..utils import compute_accuracy
-from ..utils import compute_whitespace
-from ..utils import get_table_index
-from ..utils import merge_close_lines
-from ..utils import scale_image
-from ..utils import scale_pdf
-from ..utils import segments_in_bbox
-from ..utils import text_in_bbox
+from ..image_processing import (
+    adaptive_threshold,
+    find_contours,
+    find_joints,
+    find_lines,
+)
+from ..utils import (
+    compute_accuracy,
+    compute_whitespace,
+    get_table_index,
+    merge_close_lines,
+    scale_image,
+    scale_pdf,
+    segments_in_bbox,
+    text_in_bbox,
+)
 from .base import BaseParser
-
 
 logger = logging.getLogger("camelot")
 

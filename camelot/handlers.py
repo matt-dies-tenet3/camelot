@@ -3,19 +3,19 @@ import sys
 from pathlib import Path
 from typing import Union
 
-from pypdf import PdfReader
-from pypdf import PdfWriter
+from pypdf import PdfReader, PdfWriter
 from pypdf._utils import StrByteType
 
 from .core import TableList
-from .parsers import Lattice
-from .parsers import Stream
-from .utils import TemporaryDirectory
-from .utils import download_url
-from .utils import get_page_layout
-from .utils import get_rotation
-from .utils import get_text_objects
-from .utils import is_url
+from .parsers import Lattice, Stream
+from .utils import (
+    TemporaryDirectory,
+    download_url,
+    get_page_layout,
+    get_rotation,
+    get_text_objects,
+    is_url,
+)
 
 
 class PDFHandler:
