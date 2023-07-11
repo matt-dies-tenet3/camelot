@@ -674,16 +674,16 @@ class TableList:
 
     """
 
-    def __init__(self, tables):
-        self._tables = tables
+    def __init__(self, tables) -> None:
+        self._tables: list[Table] = tables
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<{self.__class__.__name__} n={self.n}>"
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self._tables)
 
-    def __getitem__(self, idx):
+    def __getitem__(self, idx) -> Table:
         return self._tables[idx]
 
     @staticmethod
@@ -691,10 +691,10 @@ class TableList:
         return getattr(table, f"to_{f}")
 
     @property
-    def n(self):
+    def n(self) -> int:
         return len(self)
 
-    def _write_file(self, f=None, **kwargs):
+    def _write_file(self, f=None, **kwargs) -> None:
         dirname = kwargs.get("dirname")
         root = kwargs.get("root")
         ext = kwargs.get("ext")
@@ -704,7 +704,7 @@ class TableList:
             to_format = self._format_func(table, f)
             to_format(filepath)
 
-    def _compress_dir(self, **kwargs):
+    def _compress_dir(self, **kwargs) -> None:
         path = kwargs.get("path")
         dirname = kwargs.get("dirname")
         root = kwargs.get("root")
