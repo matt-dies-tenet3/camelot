@@ -618,7 +618,8 @@ def split_textline(table, textline, direction, flag_size=False, strip_text=""):
                         else:
                             # TODO: add test
                             if cut == x_cuts[-1]:
-                                cut_text.append((r, cut[0] + 1, obj))
+                                new_idx = min(cut[0] + 1, len(table.cols) - 1)
+                                cut_text.append((r, new_idx, obj))
                     elif isinstance(obj, LTAnno):
                         cut_text.append((r, cut[0], obj))
         elif direction == "vertical" and not textline.is_empty():
@@ -651,7 +652,8 @@ def split_textline(table, textline, direction, flag_size=False, strip_text=""):
                         else:
                             # TODO: add test
                             if cut == y_cuts[-1]:
-                                cut_text.append((cut[0] - 1, c, obj))
+                                new_idx = max(cut[0] - 1, 0)
+                                cut_text.append((new_idx, c, obj))
                     elif isinstance(obj, LTAnno):
                         cut_text.append((cut[0], c, obj))
     except IndexError:
