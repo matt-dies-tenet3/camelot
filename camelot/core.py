@@ -1,10 +1,12 @@
+from __future__ import annotations
+
 import os
 import sqlite3
 import tempfile
 import zipfile
 from itertools import chain
 from operator import itemgetter
-from typing import Iterator
+from typing import Iterator, Iterable
 
 import numpy as np
 import pandas as pd
@@ -672,8 +674,8 @@ class TableList:
 
     """
 
-    def __init__(self, tables) -> None:
-        self._tables: list[Table] = tables
+    def __init__(self, tables: Iterable[Table]) -> None:
+        self._tables: Iterable[Table] = tables
 
     def __repr__(self) -> str:
         return f"<{self.__class__.__name__} n={self.n}>"
